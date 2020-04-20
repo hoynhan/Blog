@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+using Blog.Data;
 
 namespace Blog
 {
@@ -22,6 +24,7 @@ namespace Blog
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]));
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
