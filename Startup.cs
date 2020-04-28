@@ -10,6 +10,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using Blog.Data;
+using Blog.Data.Repository;
 
 namespace Blog
 {
@@ -25,6 +26,7 @@ namespace Blog
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(_config["DefaultConnection"]));
+            services.AddTransient<IRepository, Repository>();
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
