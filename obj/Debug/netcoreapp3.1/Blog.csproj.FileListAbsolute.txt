@@ -107,3 +107,4 @@ C:\Users\thong\Downloads\Compressed\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.
 C:\Users\thong\Downloads\Compressed\Blog\Blog\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\thong\Downloads\Compressed\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.csproj.CoreCompileInputs.cache
 C:\Users\thong\Downloads\Compressed\Blog\Blog\obj\Debug\netcoreapp3.1\Blog.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\thong\Downloads\Compressed\Blog\Blog\obj\Debug\netcoreapp3.1\Razor\Views\Auth\Login.cshtml.g.cs
