@@ -10,7 +10,9 @@
     <div>
         <a asp-controller="Home" asp-action="Index">Home</a>
 
-        <a asp-controller="Home" asp-action="Edit">Create Post</a>
+        <a asp-controller="Panel" asp-action="Edit">Create Post</a>
+
+        <a asp-controller="Panel" asp-action="Index">AdminPanel</a>
 
         @if (User.Identity.IsAuthenticated)
         {

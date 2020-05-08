@@ -36,8 +36,12 @@ namespace Blog
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
             })
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+                .AddEntityFrameworkStores<AppDbContext>();
+
+
+                services.ConfigureApplicationCookie(options => {
+                    options.LoginPath = "/Auth/Login";
+                });
             
 
                 services.AddTransient<IRepository, Repository>();
