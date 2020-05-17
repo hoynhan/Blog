@@ -38,10 +38,9 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Articles</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">Team</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item active"><a asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a asp-controller="Panel" asp-action="Edit">Create Post</a></li>
+                    <li class="nav-item"><a asp-controller="Panel" asp-action="Index">AdminPanel</a></li>                    
                 </ul>
             </div>
         </div>
@@ -75,36 +74,36 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">                       
-                        <ul class="case">                            
-                            @foreach (var post in Model)
-                            {
-                                <li class="row">
-                                    <div class="col-md-6 col-lg-6 col-xl-8 d-flex">
-                                        <a href="blog-single.html" class="img w-100 mb-3 mb-md-0" style="background-image: url(images/image_1.jpg);"></a>
-                                    </div>
-                                    <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">                                        
-                                        <div class="col-md-6 col-lg-6 col-xl-4 d-flex">
-                                            <div class="text w-100 pl-md-3">
-                                                <span class="subheading">Illustration</span>
+                <div class="col-md-12">                      
+                    @foreach (var post in Model)
+                    {
+                        var image_path = $"/Image/{post.Image}";
+                        <div class="case">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6 col-xl-8 d-flex">
+                                    <img src="@image_path" width="700" height="500" />
+                                </div>                                        
+                                    <div class="col-md-6 col-lg-6 col-xl-4 d-flex">
+                                        <div class="text w-100 pl-md-3">
+                                            <span class="subheading">Illustration</span>
+                                            <a asp-controller="Home" asp-action="Post" asp-route-id="@post.Id">
                                                 <h2>@post.Title</h2>
-                                                <ul class="media-social list-unstyled">
-                                                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                                                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                                </ul>
-                                                <div class="meta">
-                                                    <p class="mb-0"><a href="#">11/13/2019</a> | <a href="#">12 min read</a></p>
-                                                </div>
+                                            </a>
+                                            <ul class="media-social list-unstyled">
+                                                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                                                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                                            </ul>
+                                            <div class="meta">
+                                                <p class="mb-0">11/13/2019 | 12 min read</p>
                                             </div>
                                         </div>
-                                    </a>                                
-                                </li>
-                               
-                            }
-                        </ul>                        
-                    </div>
+                                    </div>                                        
+                            </div>
+                        </div>
+                        }                
                 </div>
+            </div>
                     
                    
             <div class="row mt-5">
